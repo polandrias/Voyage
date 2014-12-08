@@ -28,7 +28,9 @@ namespace Voyage.Controllers
 
             Movie movie = db.Movies.Find(ID);
 
-            Session["movieID"] = movie.ID;
+            // Save movie to session
+            Session["movie"] = movie;
+
             ViewBag.Movie = movie;
 
             if (Request.IsAjaxRequest())
@@ -43,10 +45,12 @@ namespace Voyage.Controllers
         public ActionResult StepSeats(int ID)
         {
 
-            var movieID = Session["movieID"];
-            ViewBag.Movie = db.Movies.Find(movieID);
+            ViewBag.Movie = Session["movie"];
 
             Show show = db.Shows.Find(ID);
+
+            // Save show to session
+            Session["show"] = show;
 
             if (Request.IsAjaxRequest())
             {
@@ -56,11 +60,13 @@ namespace Voyage.Controllers
         }
 
 
-        public ActionResult StepFindCustomer()
+        public ActionResult StepFindCustomer(int seats)
         {
 
-            var movieID = Session["movieID"];
-            ViewBag.Movie = db.Movies.Find(movieID);
+            // Save amount seats to session
+            Session["seats"] = seats;
+
+            ViewBag.Movie = Session["movie"];
 
             if (Request.IsAjaxRequest())
             {
@@ -74,8 +80,7 @@ namespace Voyage.Controllers
         public ActionResult customerCheck(string phone)
         {
 
-            var movieID = Session["movieID"];
-            ViewBag.Movie = db.Movies.Find(movieID);
+            ViewBag.Movie = Session["movie"];
 
             if (Request.IsAjaxRequest())
             {
@@ -86,6 +91,8 @@ namespace Voyage.Controllers
                 }
                 else
                 {
+                    // Save customer to session
+                    Session["customer"] = customer;
                     return PartialView("editCustomer", customer);
                 }
 
@@ -121,6 +128,17 @@ namespace Voyage.Controllers
                 return 0;
             }
             return customer.ID;
+        }
+
+
+        public ActionResult StepConfirm()
+        {
+
+            var movieID = Session["movieID"];
+            ViewBag.Movie = db.Movies.Find(movieID);
+
+            return PartialView();
+
         }
 
     }
