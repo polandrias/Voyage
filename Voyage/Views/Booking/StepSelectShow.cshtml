@@ -1,0 +1,42 @@
+﻿@model Voyage.Models.Movie
+
+<div class="poster col-md-5 no-padding hidden-sm hidden-xs">
+    <img src="~/Content/Images/@ViewBag.Movie.PosterPath" alt="" />
+</div>
+
+<div class="col-md-7 col-xs-12 col-sm-12 no-padding pull-right">
+
+    <div class="col-xs-12 top">
+        <h1>@ViewBag.Movie.Title</h1>
+        <p>(@ViewBag.Movie.Release) @ViewBag.Movie.Actor <span class="label label-default">@ViewBag.Movie.Genre.Name</span></p>
+    </div>
+
+    <div class="col-xs-12 content">
+        <h2>Vælg tidspunkt og sal:</h2>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <th>Sal</th>
+                    <th>Tid</th>
+                    <th>Sædder</th>
+                    <th>Pris</th>
+                    <th></th>
+                </thead>
+                <tbody>
+                    @foreach (var show in Model.Show.OrderBy(m => m.Time))
+                    {
+                        <tr>
+                            <td>@show.Theatre.Name</td>
+                            <td>@show.Time.ToString("dddd kl. HH:mm")</td>
+                            <td>@show.Theatre.Seats</td>
+                            <td>@show.Price</td>
+                            <td><a href="#" class="btn btn-xs btn-primary pull-right" onclick="selectSeats(@show.ID); return false;" data-store="showID" data-value="@show.ID">Vælg</a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+

@@ -1,0 +1,102 @@
+﻿@model IEnumerable<Voyage.Models.Movie>
+
+@{
+    ViewBag.Title = "Forside";
+}
+
+<section id="header">
+    <div class="content">
+
+        @foreach (var movie in Model)
+        {
+            if (movie.Highlighted == true) { 
+                <style>
+                    #wrapper { 
+                        background: url('/Content/Images/@movie.BigPosterPath') no-repeat top fixed; 
+                        -webkit-background-size: contain;
+	                    -moz-background-size: contain;
+	                    -o-background-size: contain;
+	                    background-size: contain;
+                    }
+                    #header { 
+                        background: url('/Content/Images/@movie.BigPosterPath') no-repeat center !important; 
+                        -webkit-background-size: cover;
+	                    -moz-background-size: cover;
+	                    -o-background-size: cover;
+	                    background-size: cover;
+                    }
+                </style>
+                
+                <div class="col-md-12">
+                    <p class="premiere">Premiere: <b>21. december</b></p>
+                    <h1 class="title">@movie.Title</h1>
+                    <div class="info">
+                        <span class="rating">@movie.Rating</span> (@movie.Release) @movie.Actor
+                    </div>
+
+                    <div class="border hidden-sm hidden-xs"></div>
+
+                    <div class="rating-ring hidden-sm hidden-xs">
+                        <span class="number">@movie.Rating</span>
+                        <span class="reviews">Baseret på<br /> <b>292.042</b> anmeldelser</span>
+                    </div>
+
+                    <div class="poster hidden-sm hidden-xs">
+                        <img src="~/Content/Images/@movie.PosterPath" alt="" />
+                        <a href="#" class="play youtube-play" data-id="@movie.Embed"><span class="glyphicon glyphicon-play-circle"></span> Afspil trailer</a>
+                    </div>
+
+
+                </div>
+
+                <a href="#buy-ticket" class="btn btn-primary buy fancybox" onclick="selectShow(@movie.ID); return false;"><span class="glyphicon glyphicon-film"></span> Køb billetter</a>
+            }
+        }
+
+    </div>
+</section> <!-- // header -->
+
+
+<ul id="sorter">
+    <li class="col-sm-4 no-padding bg-trans"><a href="#" class="active">Program</a></li>
+    <li class="col-sm-4 no-padding bg-trans"><a href="#">Kommende film</a></li>
+    <li class="col-sm-4 no-padding bg-trans"><a href="#">Popularitet</a></li>
+</ul>
+
+
+<section id="grid">
+    <ul class="movie-list">
+
+        @foreach (var movie in Model) { 
+            <li class="movie col-md-4 col-sm-6 col-xs-12">
+                <img class="poster" src="~/Content/Images/@movie.PosterPath" alt="" />
+                @if (@movie.C3D) { 
+                    <span class="digital3">3D</span>
+                }
+                <div class="content">
+                    <p class="showtime">
+                        @{int i = 0;}
+                        @foreach (var show in movie.Show.OrderBy(m => m.Time)) {
+                            if (@ViewBag.currentDate < show.Time && i < 1) {
+                                @show.Time.ToString("dddd kl. HH:mm")
+                                i++;
+                            }
+                            <!-- Onsdag kl. 20:00 -->
+                        }
+                    </p>
+                    <h1 class="title">@movie.Title</h1>
+                    <div class="info">
+                        <span class="rating">@movie.Rating</span> (@movie.Release) @movie.Actor
+                    </div>
+
+                    <div class="border"></div>
+
+                    <ul class="btns">
+                        <li class="col-sm-6"><a href="#" class="btn btn-tint youtube-play confirm-customer-btn" data-id="@movie.Embed"><span class="glyphicon glyphicon-play-circle"></span> Se trailer</a></li>
+                        <li class="col-sm-6"><a href="#" class="btn btn-primary pull-right check-customer-btn" onclick="selectShow(@movie.ID); return false;"><span class="glyphicon glyphicon-film"></span> Køb billetter</a></li>
+                    </ul>
+                </div>
+            </li>
+        }
+    </ul>
+</section>

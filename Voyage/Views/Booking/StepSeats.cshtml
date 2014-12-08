@@ -1,0 +1,60 @@
+﻿@model Voyage.Models.Show
+
+<div class="poster col-md-5 no-padding hidden-sm hidden-xs">
+    <img src="~/Content/Images/@ViewBag.Movie.PosterPath" alt="" />
+</div>
+
+<div class="col-md-7 col-xs-12 col-sm-12 no-padding pull-right">
+
+    <div class="col-xs-12 top">
+        <h1>@ViewBag.Movie.Title</h1>
+        <p>(@ViewBag.Movie.Release) @ViewBag.Movie.Actor <span class="label label-default">@ViewBag.Movie.Genre.Name</span></p>
+    </div>
+
+    <div class="col-xs-12 content">
+        <h2>Antal billetter</h2>
+        <p>
+            Billetter tilgængelige @Model.Time.ToString("dddd kl. HH:mm"): <b>47</b>
+        </p>
+        
+        <div class="col-md-8 col-md-offset-2" style="padding: 20px 0;">
+            <div class="form-group">
+                <label>Antal billetter</label>
+                <input type="number" name="seats" class="form-control" value="1" data-store="seats" />
+            </div>
+        </div>
+
+        <div class="table-responsive col-xs-12">
+            <table class="table">
+                <tr>
+                    <td><b>Billetpris:</b></td>
+                    <td><b>@Model.Price DKK</b></td>
+                </tr>
+                <tr>
+                    <td>Sal:</td>
+                    <td>@Model.Theatre.Name</td>
+                </tr>
+                <tr>
+                    <td>Tid:</td>
+                    <td>@Model.Time.ToString("dddd kl. HH:mm")</td>
+                </tr>
+            </table>
+        </div>
+
+        <script>
+            var unitPrice = "@Model.Price";
+        </script>
+
+        <div class="col-xs-12 text-center">
+            <h2>Pris: <b><span class="total-price">@Model.Price</span> DKK</b></h2>
+        </div>
+    </div>
+
+    <div class="col-xs-12 bottom">
+        <ul>
+            <li><a href="#" class="btn btn-tint">Tilbage</a></li>
+            <li><a href="#" class="btn btn-primary" onclick="findCustomer(); return false;">Forsæt</a></li>
+        </ul>
+    </div>
+
+</div>
