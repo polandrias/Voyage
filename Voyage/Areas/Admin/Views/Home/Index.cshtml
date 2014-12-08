@@ -1,0 +1,10 @@
+﻿@{
+    ViewBag.Title = "Administration";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+<br />
+@Html.ActionLink("Brugere", "Index", "Users", new { Area = "Admin" }, null)
+<br />
+@Html.ActionLink("Kunder", "Index", "Customers", new { Area = "Admin" }, null)

@@ -13,7 +13,10 @@ $RECYCLE.BIN/
 *.msi
 *.msm
 *.msp
+
 Voyage.sln
+
+*.suo
 
 # =========================
 # Operating System Files
