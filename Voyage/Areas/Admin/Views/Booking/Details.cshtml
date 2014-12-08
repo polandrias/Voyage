@@ -1,0 +1,55 @@
+﻿@model Voyage.Models.Booking
+
+@{
+    ViewBag.Title = "Detaljer";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+<p>
+    @Html.ActionLink("Til hovedside", "Index", "Home")
+</p>
+<div>
+    <h4>Booking</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.Firstname)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Customer.Firstname)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Show.ID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Show.ID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Status.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Status.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Seats)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Seats)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Opdatér", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Til bookingliste", "Index")
+</p>
+<p>
+    @Html.ActionLink("Til hovedside", "Index", "Home")
+</p>
