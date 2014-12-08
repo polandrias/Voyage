@@ -13,9 +13,11 @@ $RECYCLE.BIN/
 *.msi
 *.msm
 *.msp
-/Voyage/obj
+Voyage/obj
+Voyage/bin
 
 Voyage.sln
+Voyage.v12.suo
 
 *.suo
 *.sln
@@ -57,3 +59,5 @@ Voyage/obj/Debug/Voyage.csprojResolveAssemblyReference.cache
 Voyage/obj/Debug/Voyage.csprojResolveAssemblyReference.cache
 Voyage/obj/Debug/Voyage.dll
 Voyage/obj/Debug/Voyage.pdb
+
+Voyage.v12.suo
