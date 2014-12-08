@@ -18,6 +18,7 @@ Voyage.sln
 
 *.suo
 *.sln
+/Voyage/obj
 
 # =========================
 # Operating System Files
