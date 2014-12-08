@@ -11,107 +11,120 @@ using Voyage.Models;
 
 namespace Voyage.Areas.Admin.Controllers
 {
-    public class UsersController : Controller
+    public class BookingController : Controller
     {
         private VoyageContext db = new VoyageContext();
 
-        // GET: Admin/Users
+        // GET: Admin/Booking
         public ActionResult Index()
         {
-            return View(db.Users.ToList());
+            var bookings = db.Bookings.Include(b => b.Customer).Include(b => b.Show).Include(b => b.Status);
+            return View(bookings.ToList());
         }
 
-        // GET: Admin/Users/Details/5
+        // GET: Admin/Booking/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            User user = db.Users.Find(id);
-            if (user == null)
+            Booking booking = db.Bookings.Find(id);
+            if (booking == null)
             {
                 return HttpNotFound();
             }
-            return View(user);
+            return View(booking);
         }
 
-        // GET: Admin/Users/Create
+        // GET: Admin/Booking/Create
         public ActionResult Create()
         {
+            ViewBag.CustomerId = new SelectList(db.Customers, "ID", "Firstname");
+            ViewBag.ShowId = new SelectList(db.Shows, "ID", "ID");
+            ViewBag.StatusId = new SelectList(db.Status, "ID", "Name");
             return View();
         }
 
-        // POST: Admin/Users/Create
+        // POST: Admin/Booking/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Firstname,Lastname,Email,Phone,Password")] User user)
+        public ActionResult Create([Bind(Include = "ID,Price,Seats,ShowId,StatusId,CustomerId")] Booking booking)
         {
             if (ModelState.IsValid)
             {
-                db.Users.Add(user);
+                db.Bookings.Add(booking);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(user);
+            ViewBag.CustomerId = new SelectList(db.Customers, "ID", "Firstname", booking.CustomerId);
+            ViewBag.ShowId = new SelectList(db.Shows, "ID", "ID", booking.ShowId);
+            ViewBag.StatusId = new SelectList(db.Status, "ID", "Name", booking.StatusId);
+            return View(booking);
         }
 
-        // GET: Admin/Users/Edit/5
+        // GET: Admin/Booking/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            User user = db.Users.Find(id);
-            if (user == null)
+            Booking booking = db.Bookings.Find(id);
+            if (booking == null)
             {
                 return HttpNotFound();
             }
-            return View(user);
+            ViewBag.CustomerId = new SelectList(db.Customers, "ID", "Firstname", booking.CustomerId);
+            ViewBag.ShowId = new SelectList(db.Shows, "ID", "ID", booking.ShowId);
+            ViewBag.StatusId = new SelectList(db.Status, "ID", "Name", booking.StatusId);
+            return View(booking);
         }
 
-        // POST: Admin/Users/Edit/5
+        // POST: Admin/Booking/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Firstname,Lastname,Email,Phone,Password")] User user)
+        public ActionResult Edit([Bind(Include = "ID,Price,Seats,ShowId,StatusId,CustomerId")] Booking booking)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(user).State = EntityState.Modified;
+                db.Entry(booking).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(user);
+            ViewBag.CustomerId = new SelectList(db.Customers, "ID", "Firstname", booking.CustomerId);
+            ViewBag.ShowId = new SelectList(db.Shows, "ID", "ID", booking.ShowId);
+            ViewBag.StatusId = new SelectList(db.Status, "ID", "Name", booking.StatusId);
+            return View(booking);
         }
 
-        // GET: Admin/Users/Delete/5
+        // GET: Admin/Booking/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            User user = db.Users.Find(id);
-            if (user == null)
+            Booking booking = db.Bookings.Find(id);
+            if (booking == null)
             {
                 return HttpNotFound();
             }
-            return View(user);
+            return View(booking);
         }
 
-        // POST: Admin/Users/Delete/5
+        // POST: Admin/Booking/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            User user = db.Users.Find(id);
-            db.Users.Remove(user);
+            Booking booking = db.Bookings.Find(id);
+            db.Bookings.Remove(booking);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

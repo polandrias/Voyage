@@ -58,3 +58,33 @@ C:\Users\Pol Andrias\Documents\Visual Studio 2013\Projects\Voyage\Voyage\bin\Sys
 C:\Users\Pol Andrias\Documents\Visual Studio 2013\Projects\Voyage\Voyage\obj\Debug\Voyage.csprojResolveAssemblyReference.cache
 C:\Users\Pol Andrias\Documents\Visual Studio 2013\Projects\Voyage\Voyage\obj\Debug\Voyage.dll
 C:\Users\Pol Andrias\Documents\Visual Studio 2013\Projects\Voyage\Voyage\obj\Debug\Voyage.pdb
+C:\Users\Kenn\Desktop\TEST\Voyage\bin\Voyage.dll.config
+C:\Users\Kenn\Desktop\TEST\Voyage\bin\Voyage.dll
+C:\Users\Kenn\Desktop\TEST\Voyage\bin\Voyage.pdb
+C:\Users\Kenn\Desktop\TEST\Voyage\bin\EntityFramework.dll
+C:\Users\Kenn\Desktop\TEST\Voyage\bin\EntityFramework.SqlServer.dll
+C:\Users\Kenn\Desktop\TEST\Voyage\bin\Newtonsoft.Json.dll
+C:\Users\Kenn\Desktop\TEST\Voyage\bin\System.Net.Http.Formatting.dll
+C:\Users\Kenn\Desktop\TEST\Voyage\bin\System.Web.Helpers.dll
+C:\Users\Kenn\Desktop\TEST\Voyage\bin\System.Web.Http.dll
+C:\Users\Kenn\Desktop\TEST\Voyage\bin\System.Web.Http.WebHost.dll
+C:\Users\Kenn\Desktop\TEST\Voyage\bin\System.Web.Mvc.dll
+C:\Users\Kenn\Desktop\TEST\Voyage\bin\System.Web.Razor.dll
+C:\Users\Kenn\Desktop\TEST\Voyage\bin\System.Web.Webpages.Deployment.dll
+C:\Users\Kenn\Desktop\TEST\Voyage\bin\System.Web.Webpages.dll
+C:\Users\Kenn\Desktop\TEST\Voyage\bin\System.Web.Webpages.Razor.dll
+C:\Users\Kenn\Desktop\TEST\Voyage\bin\EntityFramework.xml
+C:\Users\Kenn\Desktop\TEST\Voyage\bin\EntityFramework.SqlServer.xml
+C:\Users\Kenn\Desktop\TEST\Voyage\bin\System.Web.Razor.xml
+C:\Users\Kenn\Desktop\TEST\Voyage\bin\System.Web.Webpages.xml
+C:\Users\Kenn\Desktop\TEST\Voyage\bin\System.Web.Webpages.Deployment.xml
+C:\Users\Kenn\Desktop\TEST\Voyage\bin\System.Web.Webpages.Razor.xml
+C:\Users\Kenn\Desktop\TEST\Voyage\bin\System.Web.Helpers.xml
+C:\Users\Kenn\Desktop\TEST\Voyage\bin\System.Web.Mvc.xml
+C:\Users\Kenn\Desktop\TEST\Voyage\bin\Newtonsoft.Json.xml
+C:\Users\Kenn\Desktop\TEST\Voyage\bin\System.Net.Http.Formatting.xml
+C:\Users\Kenn\Desktop\TEST\Voyage\bin\System.Web.Http.xml
+C:\Users\Kenn\Desktop\TEST\Voyage\bin\System.Web.Http.WebHost.xml
+C:\Users\Kenn\Desktop\TEST\Voyage\obj\Debug\Voyage.csprojResolveAssemblyReference.cache
+C:\Users\Kenn\Desktop\TEST\Voyage\obj\Debug\Voyage.dll
+C:\Users\Kenn\Desktop\TEST\Voyage\obj\Debug\Voyage.pdb
