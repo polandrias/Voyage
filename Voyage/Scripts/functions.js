@@ -9,6 +9,7 @@ $(document).on('ready', function () {
     fancybox.init();
     data.Store();
     calcTotalPrice();
+    readyFunctions();
 });
 
 
@@ -273,8 +274,6 @@ function checkCustomer() {
 
     var phone = $('input[name="phone-check"]').val();
 
-    alert(phone);
-
     $.fancybox.showLoading();
 
     obj = new Object();
@@ -413,6 +412,21 @@ function calcTotalPrice() {
         totalPrice = seats * unitPrice.replace(",", ".");
 
         $('.total-price').html(totalPrice);
+    });
+
+}
+
+
+
+function readyFunctions() {
+
+    $(document).on('click', '.edit-user', function () {
+        $('#customerForm').show();
+        $('.customer-info').hide();
+
+        updateFancybox('#overlay');
+
+        return false;
     });
 
 }
