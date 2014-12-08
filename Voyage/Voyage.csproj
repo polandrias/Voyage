@@ -154,6 +154,11 @@
     <Content Include="Areas\Admin\Views\Movies\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Movies\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Movies\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Shows\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Shows\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Shows\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Shows\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Shows\Index.cshtml" />
     <None Include="Scripts\jquery-1.9.0.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -180,6 +185,7 @@
     <Compile Include="Areas\Admin\Controllers\CustomersController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\MoviesController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ShowsController.cs" />
     <Compile Include="Areas\Admin\Controllers\UsersController.cs" />
     <Compile Include="Controllers\BookingController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
