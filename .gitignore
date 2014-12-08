@@ -13,6 +13,7 @@ $RECYCLE.BIN/
 *.msi
 *.msm
 *.msp
+/Voyage/obj
 
 Voyage.sln
 
@@ -47,3 +48,12 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+Voyage.v12.suo
+Voyage/bin/Voyage.dll
+Voyage/bin/Voyage.pdb
+Voyage/obj/Debug/Voyage.csproj.FileListAbsolute.txt
+Voyage/obj/Debug/Voyage.csprojResolveAssemblyReference.cache
+Voyage/obj/Debug/Voyage.csprojResolveAssemblyReference.cache
+Voyage/obj/Debug/Voyage.dll
+Voyage/obj/Debug/Voyage.pdb
