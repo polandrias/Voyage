@@ -149,6 +149,16 @@
     <Content Include="Areas\Admin\Views\User\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\User\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Movies\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Movies\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Movies\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Movies\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Movies\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Shows\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Shows\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Shows\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Shows\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Shows\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Movie\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Movie\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\Movie\Details.cshtml" />
@@ -184,6 +194,9 @@
     <Compile Include="Areas\Admin\Controllers\BookingController.cs" />
     <Compile Include="Areas\Admin\Controllers\CustomerController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\MoviesController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ShowsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\UsersController.cs" />
     <Compile Include="Areas\Admin\Controllers\MovieController.cs" />
     <Compile Include="Areas\Admin\Controllers\UserController.cs" />
     <Compile Include="Controllers\BookingController.cs" />

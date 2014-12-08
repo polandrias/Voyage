@@ -1,16 +1,18 @@
-﻿@model IEnumerable<Voyage.Models.Movie>
+﻿ @model IEnumerable<Voyage.Models.Movie>
 
 @{
     ViewBag.Title = "Film";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
-
+@*<p>
+    @Html.ActionLink("Til hovedside", "Index", "Home")
+</p>*@
 <h2>Movies</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
+<table class="table table-striped">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Genre.Name)
@@ -18,21 +20,21 @@
         <th>
             @Html.DisplayNameFor(model => model.Title)
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.PosterPath)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.BigPosterPath)
-        </th>
+        </th>*@
         <th>
             @Html.DisplayNameFor(model => model.Duration)
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.Embed)
-        </th>
-        <th>
+        </th>*@
+        @*<th>
             @Html.DisplayNameFor(model => model.Rating)
-        </th>
+        </th>*@
         <th>
             @Html.DisplayNameFor(model => model.Actor)
         </th>
@@ -48,9 +50,9 @@
         <th>
             @Html.DisplayNameFor(model => model.Release)
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.Highlighted)
-        </th>
+        </th>*@
         <th></th>
     </tr>
 
@@ -62,21 +64,21 @@
         <td>
             @Html.DisplayFor(modelItem => item.Title)
         </td>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.PosterPath)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.BigPosterPath)
-        </td>
+        </td>*@
         <td>
             @Html.DisplayFor(modelItem => item.Duration)
         </td>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.Embed)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Rating)
-        </td>
+        </td>*@
         <td>
             @Html.DisplayFor(modelItem => item.Actor)
         </td>
@@ -92,9 +94,9 @@
         <td>
             @Html.DisplayFor(modelItem => item.Release)
         </td>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.Highlighted)
-        </td>
+        </td>*@
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
             @Html.ActionLink("Details", "Details", new { id=item.ID }) |
