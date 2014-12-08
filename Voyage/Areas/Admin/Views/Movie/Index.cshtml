@@ -7,15 +7,15 @@
 @*<p>
     @Html.ActionLink("Til hovedside", "Index", "Home")
 </p>*@
-<h2>Movies</h2>
+<h2>@ViewBag.Title</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Opret ny film", "Create")
 </p>
 <table class="table table-striped">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Genre.Name)
+            @Html.DisplayNameFor(model => model.Genre)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Title)

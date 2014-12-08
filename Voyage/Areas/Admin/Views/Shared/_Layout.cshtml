@@ -5,8 +5,9 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>_Layout</title>
+    <title>Administration - Voyage</title>
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/admin.css" rel="stylesheet" />
     <script src="~/Scripts/bootstrap.js"></script>
     <script src="~/Scripts/functions.js"></script>
 </head>
@@ -31,9 +32,9 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Brugere", "Index", "User", new { Area = "Admin" }, null)</li>
                     <li>@Html.ActionLink("Kunder", "Index", "Customer", new { Area = "Admin" }, null)</li>
-                    <li>@Html.ActionLink("Movies", "Index", "Movie", new { Area = "Admin" }, null)</li>
+                    <li>@Html.ActionLink("Film", "Index", "Movie", new { Area = "Admin" }, null)</li>
                     <li>@Html.ActionLink("Forestillinger", "Index", "Show", new { Area = "Admin" }, null)</li>
-                    <li>@Html.ActionLink("Booking", "Index", "Booking", new { Area = "Admin" }, null)</li>
+                    <li>@Html.ActionLink("Bookinger", "Index", "Booking", new { Area = "Admin" }, null)</li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
