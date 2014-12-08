@@ -13,7 +13,8 @@ $RECYCLE.BIN/
 *.msi
 *.msm
 *.msp
-/Voyage/obj
+Voyage/obj
+Voyage/bin
 
 Voyage.sln
 
