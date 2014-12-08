@@ -17,6 +17,7 @@ $RECYCLE.BIN/
 Voyage.sln
 
 *.suo
+*.sln
 
 # =========================
 # Operating System Files
