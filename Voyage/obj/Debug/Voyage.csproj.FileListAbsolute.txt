@@ -28,3 +28,33 @@ C:\Users\Work\Documents\Git\Voyage\Voyage\bin\System.Web.Http.WebHost.xml
 C:\Users\Work\Documents\Git\Voyage\Voyage\obj\Debug\Voyage.csprojResolveAssemblyReference.cache
 C:\Users\Work\Documents\Git\Voyage\Voyage\obj\Debug\Voyage.dll
 C:\Users\Work\Documents\Git\Voyage\Voyage\obj\Debug\Voyage.pdb
+C:\Users\Pol Andrias\Documents\Visual Studio 2013\Projects\Voyage\Voyage\bin\Voyage.dll.config
+C:\Users\Pol Andrias\Documents\Visual Studio 2013\Projects\Voyage\Voyage\bin\Voyage.dll
+C:\Users\Pol Andrias\Documents\Visual Studio 2013\Projects\Voyage\Voyage\bin\Voyage.pdb
+C:\Users\Pol Andrias\Documents\Visual Studio 2013\Projects\Voyage\Voyage\bin\EntityFramework.dll
+C:\Users\Pol Andrias\Documents\Visual Studio 2013\Projects\Voyage\Voyage\bin\EntityFramework.SqlServer.dll
+C:\Users\Pol Andrias\Documents\Visual Studio 2013\Projects\Voyage\Voyage\bin\Newtonsoft.Json.dll
+C:\Users\Pol Andrias\Documents\Visual Studio 2013\Projects\Voyage\Voyage\bin\System.Net.Http.Formatting.dll
+C:\Users\Pol Andrias\Documents\Visual Studio 2013\Projects\Voyage\Voyage\bin\System.Web.Helpers.dll
+C:\Users\Pol Andrias\Documents\Visual Studio 2013\Projects\Voyage\Voyage\bin\System.Web.Http.dll
+C:\Users\Pol Andrias\Documents\Visual Studio 2013\Projects\Voyage\Voyage\bin\System.Web.Http.WebHost.dll
+C:\Users\Pol Andrias\Documents\Visual Studio 2013\Projects\Voyage\Voyage\bin\System.Web.Mvc.dll
+C:\Users\Pol Andrias\Documents\Visual Studio 2013\Projects\Voyage\Voyage\bin\System.Web.Razor.dll
+C:\Users\Pol Andrias\Documents\Visual Studio 2013\Projects\Voyage\Voyage\bin\System.Web.Webpages.Deployment.dll
+C:\Users\Pol Andrias\Documents\Visual Studio 2013\Projects\Voyage\Voyage\bin\System.Web.Webpages.dll
+C:\Users\Pol Andrias\Documents\Visual Studio 2013\Projects\Voyage\Voyage\bin\System.Web.Webpages.Razor.dll
+C:\Users\Pol Andrias\Documents\Visual Studio 2013\Projects\Voyage\Voyage\bin\EntityFramework.xml
+C:\Users\Pol Andrias\Documents\Visual Studio 2013\Projects\Voyage\Voyage\bin\EntityFramework.SqlServer.xml
+C:\Users\Pol Andrias\Documents\Visual Studio 2013\Projects\Voyage\Voyage\bin\System.Web.Razor.xml
+C:\Users\Pol Andrias\Documents\Visual Studio 2013\Projects\Voyage\Voyage\bin\System.Web.Webpages.xml
+C:\Users\Pol Andrias\Documents\Visual Studio 2013\Projects\Voyage\Voyage\bin\System.Web.Webpages.Deployment.xml
+C:\Users\Pol Andrias\Documents\Visual Studio 2013\Projects\Voyage\Voyage\bin\System.Web.Webpages.Razor.xml
+C:\Users\Pol Andrias\Documents\Visual Studio 2013\Projects\Voyage\Voyage\bin\System.Web.Helpers.xml
+C:\Users\Pol Andrias\Documents\Visual Studio 2013\Projects\Voyage\Voyage\bin\System.Web.Mvc.xml
+C:\Users\Pol Andrias\Documents\Visual Studio 2013\Projects\Voyage\Voyage\bin\Newtonsoft.Json.xml
+C:\Users\Pol Andrias\Documents\Visual Studio 2013\Projects\Voyage\Voyage\bin\System.Net.Http.Formatting.xml
+C:\Users\Pol Andrias\Documents\Visual Studio 2013\Projects\Voyage\Voyage\bin\System.Web.Http.xml
+C:\Users\Pol Andrias\Documents\Visual Studio 2013\Projects\Voyage\Voyage\bin\System.Web.Http.WebHost.xml
+C:\Users\Pol Andrias\Documents\Visual Studio 2013\Projects\Voyage\Voyage\obj\Debug\Voyage.csprojResolveAssemblyReference.cache
+C:\Users\Pol Andrias\Documents\Visual Studio 2013\Projects\Voyage\Voyage\obj\Debug\Voyage.dll
+C:\Users\Pol Andrias\Documents\Visual Studio 2013\Projects\Voyage\Voyage\obj\Debug\Voyage.pdb
