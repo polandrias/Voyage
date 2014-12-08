@@ -245,11 +245,12 @@ function selectSeats(ID) {
 }
 
 
-function findCustomer() {
+function findCustomer(seats) {
 
     $.fancybox.showLoading();
 
     obj = new Object();
+    obj['seats'] = seats;
 
     $.ajax({
         type: 'POST',
