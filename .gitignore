@@ -50,10 +50,9 @@ Temporary Items
 .apdisk
 
 Voyage.v12.suo
-Voyage/bin/Voyage.dll
-Voyage/bin/Voyage.pdb
-Voyage/obj/Debug/Voyage.csproj.FileListAbsolute.txt
-Voyage/obj/Debug/Voyage.csprojResolveAssemblyReference.cache
-Voyage/obj/Debug/Voyage.csprojResolveAssemblyReference.cache
-Voyage/obj/Debug/Voyage.dll
-Voyage/obj/Debug/Voyage.pdb
+Voyage/bin/
+Voyage/bin/
+Voyage/obj/Debug/
+
+
+*.suo

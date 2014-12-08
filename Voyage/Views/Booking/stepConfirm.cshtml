@@ -1,4 +1,6 @@
-﻿<div class="poster col-md-5 no-padding hidden-sm hidden-xs">
+﻿@{ Movie movie = (movie)HttpContext.Current.Session["movie"]; }
+
+<div class="poster col-md-5 no-padding hidden-sm hidden-xs">
     <img src="~/Content/Images/@ViewBag.Movie.PosterPath" alt="" />
 </div>
 
