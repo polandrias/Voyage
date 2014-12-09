@@ -58,3 +58,5 @@ C:\Users\Pol Andrias\Documents\Visual Studio 2013\Projects\Voyage\Voyage\bin\Sys
 C:\Users\Pol Andrias\Documents\Visual Studio 2013\Projects\Voyage\Voyage\obj\Debug\Voyage.csprojResolveAssemblyReference.cache
 C:\Users\Pol Andrias\Documents\Visual Studio 2013\Projects\Voyage\Voyage\obj\Debug\Voyage.dll
 C:\Users\Pol Andrias\Documents\Visual Studio 2013\Projects\Voyage\Voyage\obj\Debug\Voyage.pdb
+C:\Users\Pol Andrias\Documents\Visual Studio 2013\Projects\Voyage\Voyage\obj\Debug\Voyage.Migrations.VoyageSP.resources
+C:\Users\Pol Andrias\Documents\Visual Studio 2013\Projects\Voyage\Voyage\obj\Debug\Voyage.csproj.GenerateResource.Cache

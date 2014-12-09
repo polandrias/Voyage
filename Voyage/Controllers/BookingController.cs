@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Data.SqlClient;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Voyage.DAL;
@@ -29,9 +31,10 @@ namespace Voyage.Controllers
             Movie movie = db.Movies.Find(ID);
 
             // Save movie to session
+            Session["movieID"] = movie.ID;
             Session["movie"] = movie;
 
-            ViewBag.Movie = movie;
+            ViewBag.Movie = Session["movie"];
 
             if (Request.IsAjaxRequest())
             {
@@ -45,12 +48,13 @@ namespace Voyage.Controllers
         public ActionResult StepSeats(int ID)
         {
 
-            ViewBag.Movie = Session["movie"];
-
             Show show = db.Shows.Find(ID);
 
             // Save show to session
+            Session["showID"] = show.ID;
             Session["show"] = show;
+
+            ViewBag.Movie = Session["movie"];
 
             if (Request.IsAjaxRequest())
             {
@@ -77,14 +81,14 @@ namespace Voyage.Controllers
 
 
         [HttpPost]
-        public ActionResult customerCheck(string phone)
+        public async Task<ActionResult> customerCheck(string phone)
         {
 
             ViewBag.Movie = Session["movie"];
 
             if (Request.IsAjaxRequest())
             {
-                Customer customer = db.Customers.SingleOrDefault(c => c.Phone == phone);
+                Customer customer = await db.Customers.SingleOrDefaultAsync(c => c.Phone == phone);
                 if (customer == null)
                 {
                     return PartialView("createCustomer");
@@ -103,7 +107,7 @@ namespace Voyage.Controllers
         // ID = Customer.ID
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public int ajaxSaveCustomer(Customer customer)
+        public async Task<int> ajaxSaveCustomer(Customer customer)
         {
             if (Request.IsAjaxRequest())
             {
@@ -113,10 +117,11 @@ namespace Voyage.Controllers
                     if (ModelState.IsValid)
                     {
                         db.Entry(customer).State = EntityState.Modified;
-                        db.SaveChanges();
+                        await db.SaveChangesAsync();
 
                         // Save customer to session
                         Session["customer"] = customer;
+                        Session["customerID"] = customer.ID;
 
                         return customer.ID;
                     }
@@ -142,6 +147,37 @@ namespace Voyage.Controllers
 
             return PartialView();
 
+        }
+
+
+        public async Task<ActionResult> StepComplete(int statusID)
+        {
+
+            ViewBag.Show = Session["show"];
+            ViewBag.Movie = Session["movie"];
+
+            var customerID = Session["customerID"];
+            var showID = Session["showID"];
+            var seats = Session["seats"];
+
+            Customer customer = await db.Customers.FindAsync(customerID);
+            Show show = await db.Shows.FindAsync(showID);
+
+            if (Request.IsAjaxRequest())
+            {
+                var CreateBooking = db.Database.ExecuteSqlCommand("SP_CreateBooking @firstname, @lastname, @phone, @email, @showId, @statusId, @seats",
+                new SqlParameter("@firstname", customer.Firstname),
+                new SqlParameter("@lastname", customer.Lastname),
+                new SqlParameter("@phone", customer.Phone),
+                new SqlParameter("@email", customer.Email),
+                new SqlParameter("@showId", show.ID),
+                new SqlParameter("@statusId", statusID),
+                new SqlParameter("@seats", seats));
+
+                return PartialView("StepComplete");
+            }
+
+            return PartialView();
         }
 
     }

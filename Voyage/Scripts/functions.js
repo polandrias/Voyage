@@ -357,6 +357,31 @@ function stepConfirm() {
 }
 
 
+function placeOrder(statusID) {
+
+    $.fancybox.showLoading();
+
+    obj = new Object();
+    obj['statusID'] = statusID;
+
+    $.ajax({
+        type: 'POST',
+        url: '/Booking/StepComplete/',
+        cache: false,
+        data: obj,
+        dataType: 'html',
+        success: function (data) {
+            $.fancybox.hideLoading();
+            $('#overlay').html(data);
+        }
+
+    }).done(function () {
+        updateFancybox('#overlay');
+    });
+
+}
+
+
 
 /* ---------- Universal popup holder for ajax --------- */
 function popupAuto(uniqueID, size, uniqueClass, extraClass) {

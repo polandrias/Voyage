@@ -25,6 +25,7 @@ namespace Voyage.DAL
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Booking>()
+                .MapToStoredProcedures()
                 .Property(e => e.Price)
                 .HasPrecision(6, 2);
 

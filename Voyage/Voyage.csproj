@@ -190,12 +190,16 @@
     <Compile Include="Areas\Admin\Controllers\BookingController.cs" />
     <Compile Include="Areas\Admin\Controllers\CustomerController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
-    <Compile Include="Areas\Admin\Controllers\ShowsController.cs" />
     <Compile Include="Areas\Admin\Controllers\ShowController.cs" />
     <Compile Include="Areas\Admin\Controllers\MovieController.cs" />
     <Compile Include="Areas\Admin\Controllers\UserController.cs" />
     <Compile Include="Controllers\BookingController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Migrations\201412090900023_VoyageSP.cs" />
+    <Compile Include="Migrations\201412090900023_VoyageSP.Designer.cs">
+      <DependentUpon>201412090900023_VoyageSP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Booking.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Genre.cs" />
@@ -222,6 +226,7 @@
     <Content Include="Views\Booking\createCustomer.cshtml" />
     <Content Include="Views\Booking\customerCheck.cshtml" />
     <Content Include="Views\Booking\StepConfirm.cshtml" />
+    <Content Include="Views\Booking\StepComplete.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -232,6 +237,11 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201412090900023_VoyageSP.resx">
+      <DependentUpon>201412090900023_VoyageSP.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

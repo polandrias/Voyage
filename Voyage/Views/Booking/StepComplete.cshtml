@@ -1,0 +1,25 @@
+﻿<div class="poster col-md-5 no-padding hidden-sm hidden-xs">
+    <img src="~/Content/Images/@ViewBag.Movie.PosterPath" alt="" />
+</div>
+
+<div class="col-md-7 col-xs-12 col-sm-12 no-padding pull-right">
+
+    <div class="col-xs-12 top">
+        <h1>@ViewBag.Movie.Title</h1>
+        <p>(@ViewBag.Movie.Release) @ViewBag.Movie.Actor <span class="label label-default">@ViewBag.Movie.Genre.Name</span></p>
+    </div>
+
+    <div class="col-xs-12 content">
+
+        <h2 class="text-center">Tak for din bestilling</h2>
+        <p class="text-center">Filmen starter: @ViewBag.Show.Time.ToString("dddd kl. HH:mm")</p>
+
+    </div>
+
+    <div class="col-xs-12 bottom">
+        <ul>
+            <li><a href="#" class="btn btn-success" onclick="closeOverlay(); return false;">OK</a></li>
+        </ul>
+    </div>
+
+</div>
