@@ -1,14 +1,14 @@
 ﻿@model Voyage.Models.Show
-
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Slet";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<h2>@ViewBag.Title</h2>
 
+<h3>Er du sikker på du vil slette en forestilling?</h3>
 <div>
-    <h4>Show</h4>
+    <h4>Forestillinger</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -52,8 +52,13 @@
         </dd>
 
     </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Slet" class="btn btn-default" /> |
+            @Html.ActionLink("Til forestillinger", "Index")
+        </div>
+    }
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

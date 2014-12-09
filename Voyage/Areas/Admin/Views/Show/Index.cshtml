@@ -1,16 +1,16 @@
 ﻿@model IEnumerable<Voyage.Models.Show>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Forestillinger";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 @*<p>
     @Html.ActionLink("Til hovedside", "Index", "Home")
 </p>*@
-<h2>Forestillinger</h2>
+<h2>@ViewBag.Title</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Opret ny forestilling", "Create")
 </p>
 <table class="table table-striped">
     <tr>
@@ -51,11 +51,10 @@
             @Html.DisplayFor(modelItem => item.Price)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+            @Html.ActionLink("Opdatér", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Detaljer", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Slet", "Delete", new { id=item.ID })
         </td>
     </tr>
 }
-
 </table>

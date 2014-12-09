@@ -11,7 +11,7 @@ using Voyage.Models;
 
 namespace Voyage.Areas.Admin.Controllers
 {
-    public class ShowsController : Controller
+    public class ShowController : Controller
     {
         private VoyageContext db = new VoyageContext();
 
