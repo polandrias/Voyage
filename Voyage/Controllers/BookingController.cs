@@ -80,6 +80,14 @@ namespace Voyage.Controllers
         }
 
 
+        public ActionResult BackToCustomer()
+        {
+            ViewBag.Movie = Session["movie"];
+
+            return PartialView("StepFindCustomer");
+        }
+
+
         [HttpPost]
         public async Task<ActionResult> customerCheck(string phone)
         {
@@ -91,7 +99,9 @@ namespace Voyage.Controllers
                 Customer customer = await db.Customers.SingleOrDefaultAsync(c => c.Phone == phone);
                 if (customer == null)
                 {
-                    return PartialView("createCustomer");
+                    Customer newCustomer = new Customer();
+
+                    return PartialView("createCustomer", newCustomer);
                 }
                 else
                 {
@@ -104,10 +114,28 @@ namespace Voyage.Controllers
         }
 
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public int ajaxCreateCustomer([Bind(Include = "Firstname,Lastname,Email,Phone")] Customer customer)
+        {
+            if (Request.IsAjaxRequest())
+            {
+                if (ModelState.IsValid)
+                {
+                    db.Customers.Add(customer);
+                    db.SaveChanges();
+                    return customer.ID;
+                }
+            }
+
+            return customer.ID;
+        }
+
+
         // ID = Customer.ID
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<int> ajaxSaveCustomer(Customer customer)
+        public async Task<int> ajaxSaveCustomer([Bind(Include = "ID,Firstname,Lastname,Email,Phone")] Customer customer)
         {
             if (Request.IsAjaxRequest())
             {

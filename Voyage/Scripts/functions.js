@@ -305,16 +305,23 @@ function checkCustomer() {
 }
 
 
-function saveCustomer() {
+function saveCustomer(ID) {
 
     $.fancybox.showLoading();
 
     obj = new Object();
     var customer = $('#customerForm');
 
+    var create;
+    if (ID == 0) {
+        create = 'ajaxCreateCustomer/';
+    } else {
+        create = 'ajaxSaveCustomer/';
+    }
+
     $.ajax({
         type: 'POST',
-        url: '/Booking/ajaxSaveCustomer/',
+        url: '/Booking/'+create,
         cache: false,
         data: customer.serialize(),
         dataType: 'html',
@@ -378,6 +385,37 @@ function placeOrder(statusID) {
     }).done(function () {
         updateFancybox('#overlay');
     });
+
+}
+
+
+function backToCustomer() {
+
+    $.fancybox.showLoading();
+
+    obj = new Object();
+
+    $.ajax({
+        type: 'POST',
+        url: '/Booking/BackToCustomer/',
+        cache: false,
+        data: obj,
+        dataType: 'html',
+        success: function (data) {
+            $.fancybox.hideLoading();
+            $('#overlay').html(data);
+        }
+
+    }).done(function () {
+        updateFancybox('#overlay');
+    });
+
+}
+
+
+function closeOverlay() {
+
+    $.fancybox.close();
 
 }
 

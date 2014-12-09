@@ -227,6 +227,7 @@
     <Content Include="Views\Booking\customerCheck.cshtml" />
     <Content Include="Views\Booking\StepConfirm.cshtml" />
     <Content Include="Views\Booking\StepComplete.cshtml" />
+    <Content Include="Views\Booking\createUser.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
