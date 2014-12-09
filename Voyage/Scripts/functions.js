@@ -244,8 +244,22 @@ function selectSeats(ID) {
 
 }
 
+function validate(text, field) {
+
+    $('.validation-error').remove();
+    var msg = '<p class="bg-warning validation-error" style="padding: 5px;">' + text + '</p>';
+
+    $(msg).insertBefore(field);
+
+}
+
 
 function findCustomer(seats) {
+
+    //if (seats.val() < 1 || isNaN) {
+    //    validate('Minimum 1 billet og kun tal.', seats);
+    //    return;
+    //}
 
     $.fancybox.showLoading();
 
