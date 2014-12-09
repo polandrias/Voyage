@@ -1,6 +1,4 @@
-﻿@{ Movie movie = (movie)HttpContext.Current.Session["movie"]; }
-
-<div class="poster col-md-5 no-padding hidden-sm hidden-xs">
+﻿<div class="poster col-md-5 no-padding hidden-sm hidden-xs">
     <img src="~/Content/Images/@ViewBag.Movie.PosterPath" alt="" />
 </div>
 
@@ -19,10 +17,15 @@
             <table class="table">
                 <tr>
                     <td><b>Film:</b></td>
-                    <td class="paste-movie">movie</td>
+                    <td>@ViewBag.Movie.Title</td>
                 </tr>
                 <tr>
                     <td><b>Tid</b></td>
+                    <td>@ViewBag.Show.Time.ToString("dddd kl. HH:mm")</td>
+                </tr>
+                <tr>
+                    <td><b>Billetter:</b></td>
+                    <td>@ViewBag.Seats</td>
                 </tr>
             </table>
         </div>
@@ -32,7 +35,8 @@
     <div class="col-xs-12 bottom">
         <ul>
             <li><a href="#" class="btn btn-tint">Tilbage</a></li>
-            <li><a href="#" class="btn btn-primary" onclick="findCustomer(); return false;">Forsæt</a></li>
+            <li><a href="#" class="btn btn-primary" onclick="reserveTickets(); return false;">Reserver</a></li>
+            <li><a href="#" class="btn btn-success" onclick="buyTickets(); return false;">Betal nu</a></li>
         </ul>
     </div>
 

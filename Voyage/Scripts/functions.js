@@ -320,13 +320,38 @@ function saveCustomer() {
         dataType: 'html',
         success: function (data) {
             $.fancybox.hideLoading();
-            alert(data);
+            //alert(data);
             //$('#overlay').html(data);
+            stepConfirm();
 
         }
 
     }).done(function () {
         //updateFancybox('#overlay');
+    });
+
+}
+
+
+function stepConfirm() {
+
+    $.fancybox.showLoading();
+
+    obj = new Object();
+
+    $.ajax({
+        type: 'POST',
+        url: '/Booking/StepConfirm/',
+        cache: false,
+        data: obj,
+        dataType: 'html',
+        success: function (data) {
+            $.fancybox.hideLoading();
+            $('#overlay').html(data);
+        }
+
+    }).done(function () {
+        updateFancybox('#overlay');
     });
 
 }

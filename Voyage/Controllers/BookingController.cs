@@ -91,8 +91,6 @@ namespace Voyage.Controllers
                 }
                 else
                 {
-                    // Save customer to session
-                    Session["customer"] = customer;
                     return PartialView("editCustomer", customer);
                 }
 
@@ -116,6 +114,10 @@ namespace Voyage.Controllers
                     {
                         db.Entry(customer).State = EntityState.Modified;
                         db.SaveChanges();
+
+                        // Save customer to session
+                        Session["customer"] = customer;
+
                         return customer.ID;
                     }
                 }
@@ -134,8 +136,9 @@ namespace Voyage.Controllers
         public ActionResult StepConfirm()
         {
 
-            var movieID = Session["movieID"];
-            ViewBag.Movie = db.Movies.Find(movieID);
+            ViewBag.Show = Session["show"];
+            ViewBag.Seats = Session["seats"];
+            ViewBag.Movie = Session["movie"];
 
             return PartialView();
 
