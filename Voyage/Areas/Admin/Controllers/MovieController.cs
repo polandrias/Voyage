@@ -51,10 +51,11 @@ namespace Voyage.Areas.Admin.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Title,PosterPath,BigPosterPath,Duration,Embed,Rating,Actor,C3D,Language,Premiere,Release,GenreId,Highlighted")] Movie movie)
+        public ActionResult Create([Bind(Include = "ID,Title,Duration,Embed,Rating,Actor,C3D,Language,Premiere,Release,GenreId,Highlighted")] Movie movie, HttpPostedFileBase image_p, HttpPostedFileBase image_l)
         {
             if (ModelState.IsValid)
             {
+
                 db.Movies.Add(movie);
 
                 // list all movies in db
@@ -73,8 +74,46 @@ namespace Voyage.Areas.Admin.Controllers
                     movie.Highlighted = true;
                 }
 
+                // upload image_p to server + filename to db
+                if (image_p != null && image_p.ContentLength > 0)
+                {
+                    string pic = System.IO.Path.GetFileName(image_p.FileName);
+                    // get extension from filename
+                    string ext = Path.GetExtension(pic);
+                    // give the file the movie's title_p + ext without spaces
+                    string file = Regex.Replace(movie.Title, @"\s+", "")+"_p"+ext;
+                    // lav stien til billedmappen
+                    string path = System.IO.Path.Combine(
+                                           Server.MapPath("~/Content/Images"), file);
+                    // file is uploaded
+                    image_p.SaveAs(path);
+                    // sæt filnavnet i databasen
+                    movie.PosterPath = file;
+                }
+
+                // upload image_l to server + filename to db
+                if (image_l != null && image_l.ContentLength > 0)
+                {
+                    string pic = System.IO.Path.GetFileName(image_l.FileName);
+                    // get extension from filename
+                    string ext = Path.GetExtension(pic);
+                    // give the file the movie's title_p + ext without spaces
+                    string file = Regex.Replace(movie.Title, @"\s+", "") + "_l" + ext;
+                    // lav stien til billedmappen
+                    string path = System.IO.Path.Combine(
+                                           Server.MapPath("~/Content/Images"), file);
+                    // file is uploaded
+                    image_l.SaveAs(path);
+                    // sæt filnavnet i databasen
+                    movie.BigPosterPath = file;
+                }
+
                 db.SaveChanges();
                 return RedirectToAction("Index");
+            }
+            else
+            {
+                Console.WriteLine("Fejl i formular");
             }
 
             ViewBag.GenreId = new SelectList(db.Genres, "ID", "Name", movie.GenreId);
@@ -102,7 +141,7 @@ namespace Voyage.Areas.Admin.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Title,PosterPath,BigPosterPath,Duration,Embed,Rating,Actor,C3D,Language,Premiere,Release,GenreId,Highlighted")] Movie movie)
+        public ActionResult Edit([Bind(Include = "ID,Title,PosterPath,BigPosterPath,Duration,Embed,Rating,Actor,C3D,Language,Premiere,Release,GenreId,Highlighted")] Movie movie, HttpPostedFileBase image_p, HttpPostedFileBase image_l)
         {
             if (ModelState.IsValid)
             {
@@ -122,6 +161,42 @@ namespace Voyage.Areas.Admin.Controllers
                     }
                     // highlight current movie
                     movie.Highlighted = true;
+                }
+
+                // upload image_p to server + filename to db
+                if (image_p != null && image_p.ContentLength > 0)
+                {
+                    string pic = System.IO.Path.GetFileName(image_p.FileName);
+                    // get extension from filename
+                    string ext = Path.GetExtension(pic);
+                    // give the file the movie's title_p + ext without spaces
+                    string file = Regex.Replace(movie.Title, @"\s+", "") + "_p" + ext;
+                    // lav stien til billedmappen
+                    string path = System.IO.Path.Combine(
+                                           Server.MapPath("~/Content/Images"), file);
+                    // file is uploaded
+                    image_p.SaveAs(path);
+                    // sæt filnavnet i databasen
+                    movie.PosterPath = file;
+
+                    Console.WriteLine(file + " - " + movie.PosterPath);
+                }
+
+                // upload image_l to server + filename to db
+                if (image_l != null && image_l.ContentLength > 0)
+                {
+                    string pic = System.IO.Path.GetFileName(image_l.FileName);
+                    // get extension from filename
+                    string ext = Path.GetExtension(pic);
+                    // give the file the movie's title_p + ext without spaces
+                    string file = Regex.Replace(movie.Title, @"\s+", "") + "_l" + ext;
+                    // lav stien til billedmappen
+                    string path = System.IO.Path.Combine(
+                                           Server.MapPath("~/Content/Images"), file);
+                    // file is uploaded
+                    image_l.SaveAs(path);
+                    // sæt filnavnet i databasen
+                    movie.BigPosterPath = file;
                 }
 
                 db.SaveChanges();

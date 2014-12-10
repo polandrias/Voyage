@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.Spatial;
+using System.Web;
 
 namespace Voyage.Models
 {
@@ -21,12 +22,10 @@ namespace Voyage.Models
         [Display(Name = "Titel")]
         public string Title { get; set; }
 
-        [Required]
         [StringLength(100)]
         [Display(Name = "Plakat (portrætformat)")]
         public string PosterPath { get; set; }
 
-        [Required]
         [StringLength(100)]
         [Display(Name = "Plakat (landskabsformat)")]
         public string BigPosterPath { get; set; }
