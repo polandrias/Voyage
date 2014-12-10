@@ -35,9 +35,9 @@
         <th>
             @Html.DisplayNameFor(model => model.Actor)
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.C3D)
-        </th>
+        </th>*@
         <th>
             @Html.DisplayNameFor(model => model.Language)
         </th>
@@ -59,7 +59,7 @@
             @Html.DisplayFor(modelItem => item.Genre.Name)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Title)
+            <a href="@Url.Action("Edit", new { id = item.ID })">@Html.DisplayFor(modelItem => item.Title)</a>
         </td>
         @*<td>
             @Html.DisplayFor(modelItem => item.PosterPath)
@@ -79,9 +79,9 @@
         <td>
             @Html.DisplayFor(modelItem => item.Actor)
         </td>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.C3D)
-        </td>
+        </td>*@
         <td>
             @Html.DisplayFor(modelItem => item.Language)
         </td>

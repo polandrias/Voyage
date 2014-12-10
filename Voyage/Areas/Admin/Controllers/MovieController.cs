@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Mvc;
 using Voyage.DAL;
@@ -54,6 +56,23 @@ namespace Voyage.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
                 db.Movies.Add(movie);
+
+                // list all movies in db
+                var movies = db.Movies.ToList();
+
+                // if this movie is highligheted
+                if (movie.Highlighted == true)
+                {
+                    // un-highlight all movies in db
+                    foreach (Movie m in movies)
+                    {
+                        var mo = db.Movies.Find(m.ID);
+                        mo.Highlighted = false;
+                    }
+                    // highlight current movie
+                    movie.Highlighted = true;
+                }
+
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -88,6 +107,23 @@ namespace Voyage.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
                 db.Entry(movie).State = EntityState.Modified;
+
+                // list all movies in db
+                var movies = db.Movies.ToList();
+
+                // if this movie is highligheted
+                if (movie.Highlighted == true)
+                {
+                    // un-highlight all movies in db
+                    foreach (Movie m in movies)
+                    {
+                        var mo = db.Movies.Find(m.ID);
+                        mo.Highlighted = false;
+                    }
+                    // highlight current movie
+                    movie.Highlighted = true;
+                }
+
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

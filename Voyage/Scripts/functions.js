@@ -256,10 +256,10 @@ function validate(text, field) {
 
 function findCustomer(seats) {
 
-    //if (seats.val() < 1 || isNaN) {
-    //    validate('Minimum 1 billet og kun tal.', seats);
-    //    return;
-    //}
+    if (seats < 1 || seats == isNaN) {
+        validate('Minimum 1 billet og kun tal.', $('input[name="seats"]'));
+        return;
+    }
 
     $.fancybox.showLoading();
 
@@ -288,6 +288,11 @@ function findCustomer(seats) {
 function checkCustomer() {
 
     var phone = $('input[name="phone-check"]').val();
+
+    if (phone.replace(/\s/g, '').length != 8 || phone == isNaN) {
+        validate('Ikke et gyldig telefonnummer. Minimum 8 tal.', $('input[name="phone-check"]'));
+        return;
+    }
 
     $.fancybox.showLoading();
 
