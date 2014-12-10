@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using System.Web.Optimization;
 using System.Web.Security;
 using System.Web.SessionState;
 using System.Web.Http;
@@ -18,6 +19,9 @@ namespace Voyage
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+
+            // Registrering af bundles defineret i ~/App_Start/BundleConfig.cs
+            BundleConfig.RegisterBundles(BundleTable.Bundles);
 
             // Så Web API kan køre ...
             var json = GlobalConfiguration.Configuration.Formatters.JsonFormatter;
