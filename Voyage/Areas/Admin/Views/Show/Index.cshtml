@@ -4,9 +4,7 @@
     ViewBag.Title = "Forestillinger";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
-@*<p>
-    @Html.ActionLink("Til hovedside", "Index", "Home")
-</p>*@
+
 <h2>@ViewBag.Title</h2>
 
 <p>
@@ -18,8 +16,7 @@
             @Html.DisplayNameFor(model => model.Movie.Title)
         </th>
         <th>
-            Theatre
-            @*@Html.DisplayNameFor(model => model.Theatre.Name)*@
+            @Html.DisplayNameFor(model => model.Theatre.Name)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Time)

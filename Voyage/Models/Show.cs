@@ -16,25 +16,28 @@ namespace Voyage.Models
 
         public int ID { get; set; }
 
-        [DataType(DataType.Date)]
-        /*
-        [DisplayFormat(DataFormatString = "{0:dddd MM yyyy}", ApplyFormatInEditMode = true)]
-         */
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [DataType(DataType.DateTime)]
+        //[DisplayFormat(DataFormatString = "{0:yyyy-MM-dd hh:mm}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(ApplyFormatInEditMode = true)]
+        [Display(Name = "Visningstidspunkt.")]
         public DateTime Time { get; set; }
 
         public bool? VIP { get; set; }
 
+        [Display(Name = "Pris")]
         public decimal Price { get; set; }
 
+        [Display(Name = "Titel")]
         public int MovieId { get; set; }
 
+        [Display(Name = "Sal ???")]
         public int TheatreId { get; set; }
 
         public virtual ICollection<Booking> Booking { get; set; }
 
         public virtual Movie Movie { get; set; }
 
+        [Display(Name = "Sal")]
         public virtual Theatre Theatre { get; set; }
     }
 }

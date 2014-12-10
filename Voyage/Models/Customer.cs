@@ -18,17 +18,21 @@ namespace Voyage.Models
 
         [Required]
         [StringLength(100)]
+        [Display(Name = "Fornavn")]
         public string Firstname { get; set; }
 
         [Required]
         [StringLength(100)]
+        [Display(Name = "Efternavn")]
         public string Lastname { get; set; }
 
         [StringLength(100)]
+        [Display(Name = "E-mailadresse")]
         public string Email { get; set; }
 
         [Required]
         [StringLength(12)]
+        [Display(Name = "Telefonnummer")]
         public string Phone { get; set; }
 
         public virtual ICollection<Booking> Booking { get; set; }

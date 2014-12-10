@@ -1,14 +1,14 @@
 ﻿@model Voyage.Models.Movie
 
 @{
-    ViewBag.Title = "Se Details";
+    ViewBag.Title = "Detaljer";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<h2>@ViewBag.Title</h2>
 
 <div>
-    <h4>Movie</h4>
+    <h4>Film</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -118,6 +118,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Opdatér", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Til filmliste", "Index")
 </p>

@@ -18,38 +18,50 @@ namespace Voyage.Models
 
         [Required]
         [StringLength(150)]
+        [Display(Name = "Titel")]
         public string Title { get; set; }
 
         [Required]
         [StringLength(100)]
+        [Display(Name = "Plakat (portrætformat)")]
         public string PosterPath { get; set; }
 
         [Required]
         [StringLength(100)]
+        [Display(Name = "Plakat (landskabsformat)")]
         public string BigPosterPath { get; set; }
 
+        [Display(Name = "Varighed (min.)")]
         public int Duration { get; set; }
 
         [StringLength(255)]
+        [Display(Name = "Embedkode")]
         public string Embed { get; set; }
 
+        [Display(Name = "Bedømmelse")]
         public decimal? Rating { get; set; }
 
         [Required]
         [StringLength(100)]
+        [Display(Name = "Skuespiller")]
         public string Actor { get; set; }
 
         [Column("3D")]
+        [Display(Name = "3D-format")]
         public bool C3D { get; set; }
 
         [Required]
         [StringLength(100)]
+        [Display(Name = "Sprog")]
         public string Language { get; set; }
 
+        [Display(Name = "Premieredato")]
         public DateTime? Premiere { get; set; }
 
+        [Display(Name = "Udgivelsesår")]
         public int? Release { get; set; }
 
+        [Display(Name = "Genre")]
         public int GenreId { get; set; }
 
         public bool Highlighted { get; set; }

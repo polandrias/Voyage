@@ -17,6 +17,7 @@ namespace Voyage.Models
 
         [Required]
         [StringLength(45)]
+        [Display(Name = "Status")]
         public string Name { get; set; }
 
         public virtual ICollection<Booking> Booking { get; set; }

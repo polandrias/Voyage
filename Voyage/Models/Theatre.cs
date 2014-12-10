@@ -18,8 +18,10 @@ namespace Voyage.Models
 
         [Required]
         [StringLength(45)]
+        [Display(Name = "Sal")]
         public string Name { get; set; }
 
+        [Display(Name = "Pladser")]
         public int Seats { get; set; }
 
         public virtual ICollection<Show> Show { get; set; }

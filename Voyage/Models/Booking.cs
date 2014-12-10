@@ -11,8 +11,10 @@ namespace Voyage.Models
     {
         public int ID { get; set; }
 
+        [Display(Name = "Pris")]
         public decimal Price { get; set; }
 
+        [Display(Name = "Pladser")]
         public int Seats { get; set; }
 
         public int ShowId { get; set; }

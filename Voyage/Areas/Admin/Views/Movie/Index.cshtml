@@ -4,11 +4,8 @@
     ViewBag.Title = "Film";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
-@*<p>
-    @Html.ActionLink("Til hovedside", "Index", "Home")
-</p>*@
-<h2>@ViewBag.Title</h2>
 
+<h2>@ViewBag.Title</h2>
 <p>
     @Html.ActionLink("Opret ny film", "Create")
 </p>
@@ -98,9 +95,9 @@
             @Html.DisplayFor(modelItem => item.Highlighted)
         </td>*@
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+            @Html.ActionLink("Opdatér", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Detaljer", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Slet", "Delete", new { id=item.ID })
         </td>
     </tr>
 }
