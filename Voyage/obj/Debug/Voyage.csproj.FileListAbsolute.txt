@@ -60,3 +60,8 @@ C:\Users\Pol Andrias\Documents\Visual Studio 2013\Projects\Voyage\Voyage\obj\Deb
 C:\Users\Pol Andrias\Documents\Visual Studio 2013\Projects\Voyage\Voyage\obj\Debug\Voyage.pdb
 C:\Users\Pol Andrias\Documents\Visual Studio 2013\Projects\Voyage\Voyage\obj\Debug\Voyage.Migrations.VoyageSP.resources
 C:\Users\Pol Andrias\Documents\Visual Studio 2013\Projects\Voyage\Voyage\obj\Debug\Voyage.csproj.GenerateResource.Cache
+C:\Users\Pol Andrias\Documents\Visual Studio 2013\Projects\Voyage\Voyage\bin\Antlr3.Runtime.dll
+C:\Users\Pol Andrias\Documents\Visual Studio 2013\Projects\Voyage\Voyage\bin\System.Web.Optimization.dll
+C:\Users\Pol Andrias\Documents\Visual Studio 2013\Projects\Voyage\Voyage\bin\WebGrease.dll
+C:\Users\Pol Andrias\Documents\Visual Studio 2013\Projects\Voyage\Voyage\bin\Antlr3.Runtime.pdb
+C:\Users\Pol Andrias\Documents\Visual Studio 2013\Projects\Voyage\Voyage\bin\System.Web.Optimization.xml

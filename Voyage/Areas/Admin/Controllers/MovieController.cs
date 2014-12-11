@@ -143,6 +143,7 @@ namespace Voyage.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "ID,Title,PosterPath,BigPosterPath,Duration,Embed,Rating,Actor,C3D,Language,Premiere,Release,GenreId,Highlighted")] Movie movie, HttpPostedFileBase image_p, HttpPostedFileBase image_l)
         {
+            System.Diagnostics.Debug.WriteLine("Before ModelState");
             if (ModelState.IsValid)
             {
                 db.Entry(movie).State = EntityState.Modified;
@@ -179,7 +180,11 @@ namespace Voyage.Areas.Admin.Controllers
                     // sæt filnavnet i databasen
                     movie.PosterPath = file;
 
-                    Console.WriteLine(file + " - " + movie.PosterPath);
+                    System.Diagnostics.Debug.WriteLine(file + " - " + movie.PosterPath);
+                }
+                else
+                {
+                    System.Diagnostics.Debug.WriteLine("Else");
                 }
 
                 // upload image_l to server + filename to db

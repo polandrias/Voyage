@@ -10,7 +10,8 @@ namespace Voyage
     public class BundleConfig
     {
         public static void RegisterBundles(BundleCollection bundles) {
-            bundles.Add(new StyleBundle("~/bundles/styles").Include(
+
+            bundles.Add(new StyleBundle("~/Content/styles").Include(
                 "~/Content/bootstrap.min.css",                
                 "~/Content/bootstrap-theme.min.css",
                 "~/Content/jquery.fancybox.css",
@@ -18,7 +19,7 @@ namespace Voyage
                 "~/Content/main.css"
             ));
 
-            bundles.Add(new ScriptBundle("~/bundles/scripts").Include(
+            bundles.Add(new ScriptBundle("~/Scripts/scripts").Include(
                 "~/Scripts/jquery-1.11.1.min.js",
                 "~/Scripts/bootstrap.min.js",
                 "~/Scripts/jquery.fancybox.js",
